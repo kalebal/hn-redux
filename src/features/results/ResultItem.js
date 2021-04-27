@@ -4,6 +4,7 @@ export default function ResultItem({ data }) {
   // Eventual ToDos:
   // li's link to article
   // clicking on title expands to show more info
+
   console.log(data);
   return (
     <li key={data.objectID}>
@@ -12,3 +13,4 @@ export default function ResultItem({ data }) {
     </li>
   )
 }
+// todo: prop validation -- define shape
