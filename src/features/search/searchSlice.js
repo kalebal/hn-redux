@@ -5,6 +5,7 @@ const initialState = {
   value: '',
   pastSearches: [],
   status: 'idle',
+  error: null,
 };
 
 export const searchAsync = createAsyncThunk(
@@ -38,8 +39,12 @@ export const searchSlice = createSlice({
       })
       .addCase(searchAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.pastSearches = [state.pastSearches, ...action.payload];
-      });
+        state.pastSearches = state.pastSearches.concat(action.payload);
+      })
+      .addCase(searchAsync.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
   },
 });
 
