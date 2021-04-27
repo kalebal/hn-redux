@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
-  searchAsync,
-  selectSearch,
+  fetchResults,
+  searchSubmitted,
 } from './searchSlice';
+import PastSearches from './PastSearches';
+import styles from './Search.modules.css'
 
 export function Search() {
-  const pastSearches = useSelector(selectSearch);
   const dispatch = useDispatch();
   const [text, setText] = useState('')
   const handleChange = e => setText(e.target.value)
@@ -14,19 +15,24 @@ export function Search() {
   const handleKeyDown = e => {
     const trimmedText = e.target.value.trim()
     if (e.key === 'Enter' && trimmedText) {
-      // Dispatch the search add action with this text
-      dispatch(searchAsync(text));
+      // Dispatch the search add and fetch results action with this text
+      dispatch(searchSubmitted(text));
+      dispatch(fetchResults(text));
       // And clear out the text input
       setText('')
     }
   }
 
+  const handleSubmit = e => {
+    dispatch(searchSubmitted(text));
+    dispatch(fetchResults(text));
+    setText('');
+  }
+
   return (
-    <div>
-      <h1>
-        Search
-      </h1>
+    <section>
       <input
+      className={styles.searchBar}
       type="text"
       placeholder="Search Hacker News"
       autoFocus={true}
@@ -34,12 +40,13 @@ export function Search() {
       onChange={handleChange}
       onKeyDown={handleKeyDown}
       />
-      <h3>Past Searches</h3>
-      <ul>
-        {pastSearches.map((search) => {
-          return <li key={search}> {search} </li>
-        })}
-       </ul>
-    </div>
+      <button
+      className={styles.button}
+      onClick={handleSubmit}>
+        Submit
+      </button>
+
+      <PastSearches />
+    </section>
   );
 }
