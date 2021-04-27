@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search } from './features/search/Search';
-import ResultsList from './features/search/ResultsList';
+import ResultsList from './features/results/ResultsList';
 import './App.css';
 
 
