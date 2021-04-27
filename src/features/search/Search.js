@@ -15,7 +15,7 @@ export function Search() {
     const trimmedText = e.target.value.trim()
     if (e.key === 'Enter' && trimmedText) {
       // Dispatch the search add action with this text
-      dispatch(searchAsync(text))
+      dispatch(searchAsync(text));
       // And clear out the text input
       setText('')
     }
@@ -26,7 +26,11 @@ export function Search() {
       <h1>
         Search
       </h1>
-      <h3> {pastSearches} </h3>
+      <ul>
+        {pastSearches.map((search) => {
+          return <li key={search}> {search} </li>
+        })}
+      </ul>
         <input
         type="text"
         placeholder="What are you looking for?"
