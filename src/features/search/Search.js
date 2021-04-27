@@ -26,19 +26,20 @@ export function Search() {
       <h1>
         Search
       </h1>
+      <input
+      type="text"
+      placeholder="Search Hacker News"
+      autoFocus={true}
+      value={text}
+      onChange={handleChange}
+      onKeyDown={handleKeyDown}
+      />
+      <h3>Past Searches</h3>
       <ul>
         {pastSearches.map((search) => {
           return <li key={search}> {search} </li>
         })}
-      </ul>
-        <input
-        type="text"
-        placeholder="What are you looking for?"
-        autoFocus={true}
-        value={text}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-    />
+       </ul>
     </div>
   );
 }
