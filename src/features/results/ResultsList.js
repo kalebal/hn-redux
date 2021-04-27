@@ -11,8 +11,8 @@ export default function ResultsList () {
     <section>
       <h3>Results</h3>
       <ul>
-      {results.map((search) => {
-        return <ResultItem key={search.objectID} data={search} />
+      {results.map((result) => {
+        return <ResultItem key={result.objectID} data={result} />
       })}
       </ul>
     </section>
