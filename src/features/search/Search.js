@@ -23,6 +23,7 @@ export function Search() {
     }
   }
 
+  // To consider: combine handleKeyDown and handleSubmit
   const handleSubmit = e => {
     dispatch(searchSubmitted(text));
     dispatch(fetchResults(text));
