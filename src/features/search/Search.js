@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import PastSearches from './PastSearches';
 import { fetchResults } from '../results/resultSlice';
 import styles from './Search.modules.css';
 
