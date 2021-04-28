@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectSearch } from './searchSlice';
 
+const selectSearch = state => state.searches.pastSearches;
 export default function PastSearches () {
   const pastSearches = useSelector(selectSearch);
   // TODO: clicking on a past search changes search input value
