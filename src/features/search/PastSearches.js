@@ -7,12 +7,13 @@ export default function PastSearches () {
   // TODO: clicking on a past search changes search input value
   // and displays results
   // To consider: cache past results by search query for faster load time on click
+  console.log(pastSearches);
   return (
     <section>
       <h3>Past Searches</h3>
       <ul>
       {pastSearches.map((search) => {
-        return <li key={search}> {search} </li>
+        return <li key={search.id}> {search.text} </li>
       })}
       </ul>
     </section>
