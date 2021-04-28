@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PastSearches from './PastSearches';
-import styles from './Search.modules.css'
+import { fetchResults } from '../results/resultSlice';
+import styles from './Search.modules.css';
 
 export function Search() {
   const dispatch = useDispatch();
@@ -11,9 +12,8 @@ export function Search() {
   const handleKeyDown = e => {
     const trimmedText = e.target.value.trim()
     if (e.key === 'Enter' && trimmedText) {
-      // Dispatch the search add and fetch results action with this text
-      dispatch({ type: 'searches/searchAdded', payload: text});
-      dispatch({ type: 'searches/fetchResults', payload: text});
+      // create new thunk function with submitted query
+      dispatch(fetchResults(text));
       // And clear out the text input
       setText('')
     }
@@ -21,13 +21,14 @@ export function Search() {
 
   // To consider: combine handleKeyDown and handleSubmit
   const handleSubmit = e => {
-      dispatch({ type: 'searches/searchAdded', payload: text});
-      dispatch({ type: 'searches/fetchResults', payload: text});
+    // create new thunk function with submitted query
+    dispatch(fetchResults(text));
+    // And clear out the text input
     setText('');
   }
 
   return (
-    <section>
+    <div>
       <input
       className={styles.searchBar}
       type="text"
@@ -42,8 +43,6 @@ export function Search() {
       onClick={handleSubmit}>
         Submit
       </button>
-
-      <PastSearches />
-    </section>
+    </div>
   );
 }
