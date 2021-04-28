@@ -1,18 +1,13 @@
-## Branches
-### Main
-This branch uses the Redux Toolkit template.
-
-### storeConfig
-This one has the store, reducers, and actions created from scratch.
-
 ## Future Improvements
 (in no particular order)
-1. Paginated results
-2. Clicking on a past search searches it again
-3. Cached search results (to optimize, and to combine with above)
-4. Filter results by content type: stories, comments, etc.
-5. Sort results by date/relevance/points
-6. On page load, show most popular
+1. Separate actions into their own module
+2. [Write tests for middleware, DOM manipulation](https://redux.js.org/recipes/writing-tests)
+3. Paginated results
+4. Clicking on a past search searches it again
+5. Cached search results (to optimize, and to combine with above)
+6. Filter results by content type: stories, comments, etc.
+7. Sort results by date/relevance/points
+8. On page load, show most popular
 
 
 ## Available Scripts
