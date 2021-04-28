@@ -1,4 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Branches
+### Main
+This branch uses the Redux Toolkit template.
+
+### storeConfig
+This one has the store, reducers, and actions created from scratch.
+
+## Future Improvements
+(in no particular order)
+1. Paginated results
+2. Clicking on a past search searches it again
+3. Cached search results (to optimize, and to combine with above)
+4. Filter results by content type: stories, comments, etc.
+5. Sort results by date/relevance/points
+6. On page load, show most popular
+
 
 ## Available Scripts
 
@@ -16,6 +31,9 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm test:watch`
+Same as yarn test.
 
 ### `yarn build`
 

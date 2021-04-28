@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from '../features/search/searchSlice';
+import { createStore, applyMiddleware } from 'redux';
+import appReducer from './reducer';
+import thunkMiddleware from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-export const store = configureStore({
-  reducer: {
-    search: searchReducer,
-  },
-});
+const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware));
+const store = createStore(appReducer, composedEnhancer);
+
+export default store;
+
