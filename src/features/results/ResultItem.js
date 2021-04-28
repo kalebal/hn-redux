@@ -3,8 +3,6 @@ import React from 'react'
 export default function ResultItem({ data }) {
   // Eventual ToDos:
   // clicking on title expands to show more info
-
-  console.log(data);
   return (
     <li key={data.objectID}>
       <a href={data.url}>{data.title}</a>
