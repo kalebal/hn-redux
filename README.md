@@ -1,4 +1,3 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/kalebal/hn-redux)
 ## Installation
 
 In the project directory, you can run:
