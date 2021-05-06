@@ -1,3 +1,6 @@
+## See it in action!
+Open the app [here](https://h-n-search.herokuapp.com/)
+
 ## Installation
 
 In the project directory, you can run
@@ -11,9 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-## Views
-![Screen Shot 2021-05-04 at 12 14 10 PM](https://user-images.githubusercontent.com/38890546/117036164-26904c80-acd3-11eb-8b20-0f26a96cc535.png)
 
 ## Future Improvements
 (in no particular order)
