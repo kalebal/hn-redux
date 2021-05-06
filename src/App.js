@@ -8,11 +8,16 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <section>
+      <header>
+        <h1> Search Hacker News </h1>
+      </header>
+      <main>
         <Search />
-        <PastSearches />
-      </section>
-      <ResultsList />
+        <section className="listContainer">
+          <PastSearches />
+          <ResultsList />
+        </section>
+      </main>
     </div>
   );
 }
