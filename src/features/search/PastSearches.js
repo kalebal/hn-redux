@@ -11,7 +11,7 @@ export default function PastSearches () {
   // To consider: cache past results by search query for faster load time on click
   console.log(pastSearches);
   return (
-    <section>
+    <section className="pastSearches">
       <h3>Past Searches</h3>
       <ul>
       {pastSearches.map((search) => {

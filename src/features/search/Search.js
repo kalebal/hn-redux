@@ -31,7 +31,7 @@ export function Search() {
       <div className="searchBar" action="">
         <input
         type="text"
-        placeholder="Search Hacker News 🧐"
+        placeholder="What're you looking for? 🧐"
         autoFocus={true}
         value={text}
         onChange={handleChange}

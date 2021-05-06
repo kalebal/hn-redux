@@ -9,7 +9,7 @@ export default function ResultsList () {
 
   if (typeof results !== undefined) {
     return (
-      <section>
+      <section className="results">
         <h3>Results</h3>
         <ul>
         {results.map((result) => {
