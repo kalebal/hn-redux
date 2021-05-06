@@ -22,12 +22,11 @@ export default function resultsReducer(state = initialState, action) {
   }
 };
 
-export function fetchResults(str) {
+export function fetchResults(str, action = 'Added') {
   return function fetchNewResults(dispatch, getState) {
     axios.get('http://hn.algolia.com/api/v1/search', {params: { query: str }}).then((response) => {
-      console.log('fetch results', response.data.hits);
-      dispatch({ type: 'results/resultsAdded', payload: response.data.hits });
-      dispatch({ type: 'searches/searchAdded', payload: str });
-    })
+      dispatch({ type: `results/resultsAdded`, payload: response.data.hits });
+      dispatch({ type: `searches/search${action}`, payload: str });
+    });
   }
 };

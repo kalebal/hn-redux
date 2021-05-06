@@ -27,6 +27,9 @@ export default function searchReducer(state = initialState, action) {
         ]
       }
     }
+    case 'searches/searchClicked': {
+      return state;
+    }
     default:
       return state;
     }

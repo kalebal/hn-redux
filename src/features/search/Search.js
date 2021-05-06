@@ -27,7 +27,7 @@ export function Search() {
   }
 
   return (
-    <div>
+    <div className="searchContainer">
       <input
       className={styles.searchBar}
       type="text"
