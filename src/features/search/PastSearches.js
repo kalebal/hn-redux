@@ -9,7 +9,7 @@ export default function PastSearches () {
   // TODO: clicking on a past search changes search input value
   // and displays results
   // To consider: cache past results by search query for faster load time on click
-  console.log(pastSearches);
+  console.log('pastSearches: ', pastSearches);
   return (
     <section className="pastSearches">
       <h3>Past Searches</h3>
@@ -18,7 +18,15 @@ export default function PastSearches () {
         return (<li
         key={search.id}
         onClick={() => dispatch(fetchResults(search.text, 'Clicked'))}
-        > {search.text} </li>);
+        >
+        {search.text}
+        <i className="fa fa-trash"
+        aria-hidden="true"
+        onClick={(e) => {
+          e.preventDefault()
+          dispatch({ type: 'searches/deleteSearch', payload: search.id })}}
+        ></i>
+        </li>);
       })}
       </ul>
     </section>

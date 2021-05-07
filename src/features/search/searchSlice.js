@@ -30,6 +30,17 @@ export default function searchReducer(state = initialState, action) {
     case 'searches/searchClicked': {
       return state;
     }
+    case 'searches/deleteSearch': {
+      let next = state.pastSearches;
+      next = next.filter((elt) => {
+        return elt.id !== action.payload;
+      });
+      console.log('next after filter', next);
+      return {
+        ...state,
+        pastSearches: next
+      };
+    }
     default:
       return state;
     }
