@@ -13,6 +13,7 @@ export default function PastSearches () {
   return (
     <section className="pastSearches">
       <h3>Past Searches</h3>
+      <hr />
       <ul>
       {pastSearches.map((search) => {
         return (<li
