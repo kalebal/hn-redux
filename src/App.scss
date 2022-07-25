@@ -1,4 +1,3 @@
-
 .App {
   display: flex;
   flex-direction: column;
@@ -12,38 +11,43 @@ h1 {
   color: white;
 }
 
+i {
+  cursor: crosshair;
+}
+
+// #region Search
 .searchContainer {
   height: 0%;
 }
 
 .searchBar {
-    position: relative;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    transition: all 1s;
-    width: 50px;
-    height: 50px;
-    background: white;
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 4px solid white;
-    padding: 5px;
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
 
-    &:hover{
+  &:hover {
     width: 400px;
     cursor: pointer;
-    }
+  }
 
-    &:hover input{
-        display: block;
-    }
+  &:hover input {
+    display: block;
+  }
 
-    &:hover .fa{
-        background: #07051a;
-        color: white;
-    }
-    .fa{
+  &:hover .fa {
+    background: #07051a;
+    color: white;
+  }
+  .fa {
     cursor: pointer;
     box-sizing: border-box;
     padding: 10px;
@@ -59,24 +63,27 @@ h1 {
     transition: all 1s;
     border: 0px;
     background-color: white;
-}
-}
-
-input{
-    position: absolute;
-    top: 0;
-    left: 5px;
-    width: 100%;
-    height: 42.5px;
-    line-height: 30px;
-    outline: 0;
-    border: 0;
-    display: none;
-    font-size: 1em;
-    border-radius: 20px;
-    padding:  0 0 0 0px;
+  }
 }
 
+input {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 0 0 0px;
+}
+
+// #endregion
+
+// #region LISTS
 .listContainer {
   width: 100%;
   height: 0%;
@@ -85,21 +92,8 @@ input{
   justify-content: space-around;
 }
 
-
-@media only screen and (min-width: 768px) {
-  .listContainer {
-    flex-direction: row;
-    max-width: 70%;
-  }
-  .results {
-    width: 500px;
-  }
-  .pastSearches {
-    width: 300px;
-  }
-}
-
-.pastSearches, .results {
+.pastSearches,
+.results {
   margin: 1rem;
   padding: 0.5rem 1rem;
   min-height: 50%;
@@ -112,24 +106,50 @@ input{
   }
 
   ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 
-  li {
-    text-align: left;
-    margin-left: 0.5rem;
+    li {
+      text-align: left;
+      margin-left: 0.5rem;
+    }
   }
 }
-}
+
 .pastSearches {
   background-color: ivory;
   li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 8px;
   }
+
+  max-height: 150px;
 }
 
 .results {
   background-color: ivory;
+  li {
+    p {
+      margin-top: 8px;
+    }
+  }
 }
+// #endregion LISTS
+
+// #region DESKTOP VIEW
+@media only screen and (min-width: 768px) {
+  .listContainer {
+    flex-direction: row;
+    max-width: 70%;
+  }
+  .results {
+    flex: 1;
+    max-width: 70%;
+  }
+  .pastSearches {
+    max-width: 300px;
+  }
+}
+// #endregion
